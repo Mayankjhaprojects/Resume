@@ -243,7 +243,7 @@ const Homepg = () => {
       {/* Footer */}
       <footer className="bg-white/30 border-t border-white/20 text-gray-700 p-6 mt-auto">
         <div className="text-center">
-          <p>&copy; 2025 Resume Builder. All rights reserved. @Gaurav kr. Baraik</p>
+          <p>&copy; 2025 Resume Builder. All rights reserved.</p>
         </div>
       </footer>
     </div>
