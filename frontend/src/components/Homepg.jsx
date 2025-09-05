@@ -1,6 +1,7 @@
 
 
 
+const API_URL = import.meta.env.VITE_API_URL;
 
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -45,7 +46,7 @@ const Homepg = () => {
     }
     const formdata = { reviewText, rating };
     try {
-      const response = await fetch('http://localhost:9000/api/reviews/reviewpg-homepg', {
+      const response = await fetch(`${API_URL}/api/reviews/reviewpg-homepg`, {
         method: 'POST',
         headers: {Authorization: `Bearer ${token}`,
          'Content-Type': 'application/json' },
