@@ -185,7 +185,7 @@ const Skillpg = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <button
                   className="w-full sm:flex-1 bg-white hover:bg-gray-50 text-gray-700 font-semibold px-4 sm:px-6 py-3 sm:py-4 rounded-xl border-2 border-gray-200 hover:border-gray-300 shadow-lg"
-                  onClick={() => navigate("/Educationpg")}
+                  onClick={() => navigate("/Educationpage")}
                 >
                   Back: Education
                 </button>

@@ -72,8 +72,9 @@ const Homepg = () => {
       const response = await fetch("http://localhost:5000/api/reviews/reviews", {
         method: "GET",
         headers: {
+          Authorization: `Bearer ${token}`,// ✅ Send token with request
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`, // ✅ Send token with request
+          
         },
       });
 

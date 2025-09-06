@@ -105,13 +105,20 @@ const Resume = () => {
     setSelectedTheme(themeKey);
   };
 
- const handleDownloadPDF = async () => {
+const handleDownloadPDF = async () => {
   if (user_id && user_id !== "demo-user") {
     try {
+      const token = localStorage.getItem("token"); // or sessionStorage, depending on your auth setup
+
       const res = await axios.post(
         `${API_URL}/api/resume/download/${user_id}`,
-        { colorScheme: selectedTheme }, // pass theme here
-        { responseType: "blob" } // PDF comes as binary
+        { colorScheme: selectedTheme }, // body
+        {
+          responseType: "blob", // PDF as binary
+          headers: {
+            Authorization: `Bearer ${token}`, // ✅ attach JWT
+          },
+        }
       );
 
       // Create a blob download link
@@ -131,6 +138,7 @@ const Resume = () => {
     window.print(); // fallback for demo
   }
 };
+
 
 
   return (
