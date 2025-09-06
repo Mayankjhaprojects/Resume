@@ -60,7 +60,7 @@ router.post("/download/:id", async (req, res) => {
 
     res.send(pdfBuffer);
   } catch (error) {
-    console.error("PDF generation error:", error);
+     console.error("PDF generation error:", error.stack || error);
     res.status(500).json({
       error: "Error generating PDF",
       details: error.message,
