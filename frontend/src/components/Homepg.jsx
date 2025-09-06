@@ -26,7 +26,7 @@ const Homepg = () => {
   const data = location.state;
   const navigate = useNavigate();
   localStorage.setItem('user_id', JSON.stringify(data.user._id));
-  localStorage.getItem("token");
+  const token=localStorage.getItem("token");
 
   useEffect(() => setIsVisible(true), []);
 
@@ -69,7 +69,7 @@ const Homepg = () => {
     try {
        // ✅ Get token from localStorage
 
-      const response = await fetch("http://localhost:5000/api/reviews/reviews", {
+      const response = await fetch(`${API_URL}/api/reviews/reviews`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,// ✅ Send token with request
