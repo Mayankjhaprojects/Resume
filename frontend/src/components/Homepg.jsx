@@ -7,6 +7,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import BoyImage from '../../public/Resume.jpeg';
+import { Link } from "react-router-dom"; 
 
 const Homepg = () => {
   const [user, setUser] = useState('login');
@@ -107,8 +108,8 @@ const Homepg = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6 items-center">
-            <a href="/ContactUs" className="hover:text-purple-600 font-medium">Contact</a>
-            <a href="/ContactUs" className="hover:text-purple-600 font-medium">About</a>
+             <Link to="/ContactUs" className="hover:text-purple-600 font-medium">Contact</Link>
+             <Link to="/ContactUs" className="hover:text-purple-600 font-medium">About</Link>
             <a href="/Resume.jpeg" className="hover:text-purple-600 font-medium">Template</a>
             <button
               onClick={handleLogout}
